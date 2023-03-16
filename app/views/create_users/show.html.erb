@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @create_user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @create_user.email %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @create_user.password_digest %>
+</p>
+
+<%= link_to 'Edit', edit_create_user_path(@create_user) %> |
+<%= link_to 'Back', create_users_path %>

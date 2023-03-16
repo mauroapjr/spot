@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :create_products
+  resources :create_users
+  resources :users
+  resources :products
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
