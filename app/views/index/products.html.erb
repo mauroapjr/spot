@@ -1,0 +1,29 @@
+<h1>Index#products</h1>
+<tr>
+  <td>
+    <%= image_tag 'sunglasses_PNG154.png' %>
+  </td>
+  <td>
+    <h4><%=  %></h4>
+    <br>
+    
+  </td>
+  
+  <td>
+    
+  </td>
+  <td>
+    
+  </td>
+  <td>
+    
+  </td>
+</tr>
+<% if @create_product %>
+<%= render 'form', create_product: @create_product %>
+<%= render 'sunglasses_PNG154.png', create_product: @create_product %>
+<%= image_tag create_products.image, alt: product.name %>
+<% else %>
+  <p>No products found.</p>
+<% end %>
+<p>Find me in app/views/index/products.html.erb</p>

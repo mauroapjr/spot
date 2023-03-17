@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'index/products' => 'index#products'
   resources :create_products
   resources :create_users
   resources :users
   resources :products
+  get 'about/index' => 'about#index'
+
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
@@ -11,13 +14,10 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  get 'admin/categories'
-  get 'about/index'
-  
-  root to: 'products#index'
+  root to: 'index#products'
 
   resources :products, only: [:index, :show]
-  resources :categories, only: [:show]
+  
   
   resource :cart, only: [:show] do
     post   :add_item
@@ -26,9 +26,5 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:create, :show]
 
-  namespace :admin do
-    root to: 'dashboard#show'
-    resources :products, except: [:edit, :update, :show]
-    resources :categories, only: [:index, :new, :create]
-  end
+  
 end
