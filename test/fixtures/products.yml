@@ -2,14 +2,14 @@
 
 one:
   label: MyString
-  quantity: 1
-  price: 1
   description: MyString
   image: MyString
+  quantity: 1
+  price: 1
 
 two:
   label: MyString
-  quantity: 1
-  price: 1
   description: MyString
   image: MyString
+  quantity: 1
+  price: 1

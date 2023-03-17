@@ -23,3 +23,11 @@ create_products.create!({
   quantity: 1,
   price: 184.99
 })
+
+products.create!({
+  name: 'Sunglass',
+  description: 'Nice glasses',
+  image: 'sunglasses_PNG154.png',
+  quantity: 5,
+  price: 150.99
+})

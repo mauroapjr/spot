@@ -1,18 +1,35 @@
-<section class="products-index">
-  <header class="page-header">
-    <div class="intro">
-      <p>
-        Looking for a way to see better? What are you waiting for?
-      </p>
-      <p>
-        At our online shop, we only sell the highest quality items and we offer free shipping on all orders over $150, so it's easy to get all you want without breaking the bank.
-      </p>
-      <p>
-        We have a wide variety of models available for purchase on our website. 
-      </p>
-    </div>
-  </header>
-  <div class="products">
-    
-  </div>
-</section>
+<p id="notice"><%= notice %></p>
+
+<h1>Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.label %></td>
+        <td><%= product.description %></td>
+        <td><%= product.image %></td>
+        <td><%= product.quantity %></td>
+        <td><%= product.price %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>
